@@ -20,7 +20,7 @@
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorOnPrimary">@android:color/white</item>
-        <item name="colorSecondary">@color/primary</item>
+        <item name="colorSecondary">@color/accent</item>
         <item name="colorOnSecondary">@android:color/white</item>
         <item name="colorIssueOpen">@color/issue_open</item>
         <item name="colorIssueClosed">@color/issue_closed</item>

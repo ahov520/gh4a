@@ -11,15 +11,15 @@
 
     <style name="TextAppearance.ItemTitle" parent="TextAppearance.AppCompat.Medium">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
-        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
     <style name="TextAppearance.HeaderTitle" parent="TextAppearance.AppCompat.Large">
-        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
     <style name="TextAppearance.CountHeaderItem" parent="TextAppearance.AppCompat.Large">
-        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
     <style name="TextAppearance.Header" parent="TextAppearance.AppCompat.Body1">
@@ -94,7 +94,8 @@
     </style>
 
     <style name="CardContainer">
-        <item name="android:background">@color/cardview_light_background</item>
+        <item name="android:background">@drawable/bg_card_surface</item>
+        <item name="android:padding">0dp</item>
     </style>
 
     <style name="Widget.ActionBar.TabView" parent="Widget.AppCompat.ActionBar.TabView">

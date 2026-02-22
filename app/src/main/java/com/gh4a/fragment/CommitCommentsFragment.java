@@ -20,6 +20,7 @@ import com.gh4a.ServiceFactory;
 import com.gh4a.activities.EditCommitCommentActivity;
 import com.gh4a.adapter.CommitCommentAdapter;
 import com.gh4a.adapter.RootAdapter;
+import com.gh4a.translation.TranslationClient;
 import com.gh4a.utils.ActivityResultHelpers;
 import com.gh4a.utils.ApiHelpers;
 import com.gh4a.utils.IntentUtils;
@@ -255,6 +256,18 @@ public class CommitCommentsFragment extends ListDataBaseFragment<GitComment> imp
     public void deleteComment(final GitComment comment) {
         ConfirmationDialogFragment.show(this, R.string.delete_comment_message,
                 R.string.delete, comment, "deleteconfirm");
+    }
+
+    @Override
+    public void translateComment(GitComment comment) {
+        TranslationClient translationClient = new TranslationClient(requireContext());
+        String sourceText = comment.body();
+        translationClient.translate(sourceText)
+                .compose(RxUtils.wrapForBackgroundTask(getBaseActivity(),
+                        R.string.translating_msg, R.string.error_translate_comment))
+                .subscribe(result -> TranslationResultBottomSheet.show(
+                                getChildFragmentManager(), sourceText, result),
+                        error -> handleActionFailure("Translating comment failed", error));
     }
 
     @Override

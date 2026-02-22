@@ -62,6 +62,54 @@
         android:summary="%s"
         android:title="@string/notification_interval" />
 
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        android:title="@string/translation_settings" />
+
+    <SwitchPreference
+        app:iconSpaceReserved="false"
+        android:defaultValue="true"
+        android:key="translation_enabled"
+        android:title="@string/translation_enabled" />
+
+    <EditTextPreference
+        app:iconSpaceReserved="false"
+        android:defaultValue=""
+        android:key="translation_gateway_base_url"
+        android:summary="@string/translation_gateway_base_url_hint"
+        android:title="@string/translation_gateway_base_url" />
+
+    <EditTextPreference
+        app:iconSpaceReserved="false"
+        android:defaultValue="/translate"
+        android:key="translation_gateway_path"
+        android:summary="@string/translation_gateway_path_hint"
+        android:title="@string/translation_gateway_path" />
+
+    <EditTextPreference
+        app:iconSpaceReserved="false"
+        android:defaultValue=""
+        android:key="translation_api_key"
+        android:title="@string/translation_api_key" />
+
+    <ListPreference
+        app:iconSpaceReserved="false"
+        android:defaultValue="zh-CN"
+        android:entries="@array/translation_target_lang_items"
+        android:entryValues="@array/translation_target_lang_values"
+        android:key="translation_target_lang"
+        android:summary="%s"
+        android:title="@string/translation_target_language" />
+
+    <com.gh4a.widget.IntegerListPreference
+        app:iconSpaceReserved="false"
+        android:defaultValue="15"
+        android:entries="@array/translation_timeout_items"
+        android:entryValues="@array/translation_timeout_values"
+        android:key="translation_timeout_sec"
+        android:summary="%s"
+        android:title="@string/translation_timeout" />
+
     <Preference
         app:iconSpaceReserved="false"
         android:key="about"

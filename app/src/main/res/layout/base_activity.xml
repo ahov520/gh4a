@@ -10,19 +10,20 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinator_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="?attr/list_background">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
-            android:elevation="2dp">
+            android:elevation="6dp">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
+                android:layout_height="56dp"
                 android:theme="?attr/actionBarTheme"
                 app:popupTheme="?attr/actionBarPopupTheme" />
 
@@ -40,7 +41,8 @@
                 <FrameLayout
                     android:id="@+id/content"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="?attr/list_background">
 
                     <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
                         android:id="@+id/progress"
@@ -85,13 +87,14 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/left_drawer"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="match_parent"
-        android:layout_gravity="left" />
+        android:layout_gravity="left"
+        android:background="?attr/drawerBackground" />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/right_drawer"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="match_parent"
         android:layout_gravity="right"
         android:background="?attr/drawerBackground"

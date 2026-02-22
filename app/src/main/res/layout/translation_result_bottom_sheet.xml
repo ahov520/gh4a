@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/translation_result_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="?android:textColorPrimary"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/translated_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/translation_translated_label"
+        android:textAppearance="@style/TextAppearance.VerySmall.Bold" />
+
+    <com.gh4a.widget.LinkHandlingTextView
+        android:id="@+id/translated_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="?android:textColorPrimary"
+        android:textIsSelectable="true" />
+
+    <TextView
+        android:id="@+id/original_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/translation_original_label"
+        android:textAppearance="@style/TextAppearance.VerySmall.Bold" />
+
+    <com.gh4a.widget.LinkHandlingTextView
+        android:id="@+id/original_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="?android:textColorSecondary"
+        android:textIsSelectable="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/copy_button"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/translation_copy" />
+
+        <Button
+            android:id="@+id/close_button"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/close" />
+
+    </LinearLayout>
+
+</LinearLayout>

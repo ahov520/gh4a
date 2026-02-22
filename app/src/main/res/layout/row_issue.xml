@@ -4,9 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/selectableItemBackground"
-    android:minHeight="?attr/listPreferredItemHeightLarge"
-    android:padding="@dimen/content_padding">
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="6dp"
+    android:background="@drawable/bg_card_surface"
+    android:foreground="?attr/selectableItemBackground"
+    android:minHeight="112dp"
+    android:padding="14dp">
 
     <LinearLayout
         android:id="@+id/info"
@@ -21,12 +26,12 @@
             android:id="@+id/tv_milestone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
+            android:layout_marginBottom="6dp"
             android:drawableLeft="@drawable/milestone_small"
             android:drawablePadding="4dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:maxWidth="80dp"
+            android:maxWidth="96dp"
             android:textAppearance="@style/TextAppearance.VerySmall"
             android:visibility="gone"
             tools:text="v2.10.3"
@@ -45,16 +50,16 @@
 
     <com.gh4a.widget.FixedSizeImageView
         android:id="@+id/iv_gravatar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginTop="4dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         tools:src="@drawable/default_avatar" />
 
     <com.gh4a.widget.LabelBadgeView
         android:id="@+id/labels"
-        android:layout_width="40dp"
+        android:layout_width="42dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_below="@id/iv_gravatar"
@@ -72,18 +77,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:maxLines="2"
             android:ellipsize="end"
+            android:maxLines="1"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="?android:attr/textColorPrimary"
-            tools:text="IssueCreatorUsername"
-            tools:ignore="InefficientWeight" />
+            tools:ignore="InefficientWeight"
+            tools:text="IssueCreatorUsername" />
 
         <TextView
             android:id="@+id/tv_timestamp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="12dp"
             android:textAppearance="@style/TextAppearance.VerySmall"
             tools:text="yesterday" />
     </LinearLayout>
@@ -93,10 +98,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/username_and_date"
+        android:layout_marginTop="4dp"
         android:layout_toLeftOf="@id/info"
         android:layout_toRightOf="@id/iv_gravatar"
         android:ellipsize="end"
-        android:maxLines="2"
+        android:maxLines="3"
         android:textAppearance="@style/TextAppearance.ItemTitle"
         tools:text="Long issue title that is supposed to wrap in the layout preview." />
 
@@ -105,6 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_desc"
+        android:layout_marginTop="8dp"
         android:layout_toLeftOf="@id/info"
         android:layout_toRightOf="@id/iv_gravatar"
         android:drawablePadding="4dp"

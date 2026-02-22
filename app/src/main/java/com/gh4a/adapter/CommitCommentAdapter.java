@@ -58,6 +58,7 @@ public class CommitCommentAdapter extends RootAdapter<GitComment, CommitCommentA
     public interface OnCommentAction {
         void editComment(GitComment comment);
         void deleteComment(GitComment comment);
+        void translateComment(GitComment comment);
         void quoteText(CharSequence text);
         void addText(CharSequence text);
     }
@@ -85,6 +86,10 @@ public class CommitCommentAdapter extends RootAdapter<GitComment, CommitCommentA
                     String subject = mContext.getString(R.string.share_commit_comment_subject,
                             item.id(), mRepoOwner + "/" + mRepoName);
                     IntentUtils.share(mContext, subject, Uri.parse(item.htmlUrl()));
+                    return true;
+
+                case R.id.translate:
+                    mActionCallback.translateComment(item);
                     return true;
             }
             return false;

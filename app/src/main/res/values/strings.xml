@@ -641,4 +641,28 @@
     <string name="use_custom_tabs">Use built-in browser</string>
     <string name="open_links_inside_app">Open links inside the app</string>
     <string name="open_links_external_browser">Open links in an external browser</string>
+
+    <string name="translation">Translate</string>
+    <string name="translating_msg">Translating…</string>
+    <string name="error_translate_comment">Failed to translate content</string>
+    <string name="translation_result_title">Translation</string>
+    <string name="translation_translated_label">Translated text</string>
+    <string name="translation_original_label">Original text</string>
+    <string name="translation_copy">Copy translation</string>
+    <string name="translation_copy_label">Translation</string>
+    <string name="translation_copy_success">Translation copied to clipboard</string>
+    <string name="translation_empty_content">No translatable content found</string>
+    <string name="translation_disabled">Translation is disabled in settings</string>
+    <string name="translation_missing_base_url">Please configure translation gateway base URL</string>
+    <string name="translation_invalid_base_url">Translation gateway URL is invalid</string>
+    <string name="translation_invalid_response">Translation service returned invalid data</string>
+    <string name="translation_settings">Translation</string>
+    <string name="translation_enabled">Enable translation</string>
+    <string name="translation_gateway_base_url">Gateway base URL</string>
+    <string name="translation_gateway_path">Gateway path</string>
+    <string name="translation_api_key">API key</string>
+    <string name="translation_target_language">Target language</string>
+    <string name="translation_timeout">Request timeout</string>
+    <string name="translation_gateway_base_url_hint">https://example.com</string>
+    <string name="translation_gateway_path_hint">/translate</string>
 </resources>

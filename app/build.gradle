@@ -30,7 +30,7 @@ android {
         versionCode 78
         versionName "4.6.15"
         applicationId "com.gh4a"
-        resourceConfigurations += ['en']
+        resourceConfigurations += ['en', 'zh-rCN']
 
         buildConfigField 'String', 'CLIENT_ID', ClientId
         buildConfigField 'String', 'CLIENT_SECRET', ClientSecret

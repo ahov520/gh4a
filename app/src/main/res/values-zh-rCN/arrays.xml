@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string-array name="theme_items">
         <item>@string/theme_light</item>
@@ -37,11 +37,11 @@
         <item>blog</item>
     </string-array>
     <string-array name="text_size_items">
-        <item>Smallest</item>
-        <item>Smaller</item>
-        <item>Normal</item>
-        <item>Larger</item>
-        <item>Largest</item>
+        <item>最小</item>
+        <item>较小</item>
+        <item>普通的</item>
+        <item>较大</item>
+        <item>最大</item>
     </string-array>
     <string-array name="text_size_values" translatable="false">
         <item>0</item>
@@ -51,9 +51,9 @@
         <item>4</item>
     </string-array>
     <string-array name="load_gif_mode_items">
-        <item>Don\'t load</item>
-        <item>Only load on Wifi</item>
-        <item>Load always</item>
+        <item>不加载</item>
+        <item>仅在 Wifi 上加载</item>
+        <item>始终加载</item>
     </string-array>
     <string-array name="load_gif_mode_values">
         <item>0</item>
@@ -61,18 +61,18 @@
         <item>2</item>
     </string-array>
     <string-array name="filter_participating">
-        <item>Any</item>
-        <item>Participating</item>
-        <item>Not participating</item>
+        <item>任何</item>
+        <item>参与</item>
+        <item>不参加</item>
     </string-array>
     <string-array name="notification_interval_items">
-        <item>15 minutes</item>
-        <item>20 minutes</item>
-        <item>30 minutes</item>
-        <item>1 hour</item>
-        <item>2 hours</item>
-        <item>3 hours</item>
-        <item>6 hours</item>
+        <item>15分钟</item>
+        <item>20分钟</item>
+        <item>30分钟</item>
+        <item>1小时</item>
+        <item>2小时</item>
+        <item>3小时</item>
+        <item>6小时</item>
     </string-array>
     <string-array name="notification_interval_values">
         <item>15</item>
@@ -84,17 +84,17 @@
         <item>360</item>
     </string-array>
     <string-array name="translation_target_lang_items" translatable="false">
-        <item>Chinese (Simplified) (zh-CN)</item>
+        <item>简体中文 (zh-CN)</item>
     </string-array>
     <string-array name="translation_target_lang_values" translatable="false">
         <item>zh-CN</item>
     </string-array>
     <string-array name="translation_timeout_items">
-        <item>10 seconds</item>
-        <item>15 seconds</item>
-        <item>20 seconds</item>
-        <item>30 seconds</item>
-        <item>45 seconds</item>
+        <item>10 秒</item>
+        <item>15 秒</item>
+        <item>20 秒</item>
+        <item>30 秒</item>
+        <item>45 秒</item>
     </string-array>
     <string-array name="translation_timeout_values" translatable="false">
         <item>10</item>

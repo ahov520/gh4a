@@ -5,16 +5,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/selectableItemBackground"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="6dp"
+    android:background="@drawable/bg_card_surface"
+    android:foreground="?attr/selectableItemBackground"
     android:clipToPadding="false"
-    android:minHeight="?attr/listPreferredItemHeight"
-    android:padding="@dimen/content_padding">
+    android:minHeight="82dp"
+    android:padding="14dp">
 
     <com.gh4a.widget.FixedSizeImageView
         android:id="@+id/iv_gravatar"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginRight="16dp"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginRight="12dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         tools:src="@drawable/default_avatar" />
 
@@ -24,7 +29,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="-8dp"
+        android:layout_marginRight="-6dp"
         android:scaleType="center"
         android:src="@drawable/overflow" />
 
@@ -45,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/tv_extra"
         android:layout_alignWithParentIfMissing="true"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="10dp"
         android:layout_toLeftOf="@id/iv_menu"
         android:layout_toRightOf="@id/tv_extra"
         android:textAppearance="@style/TextAppearance.VerySmall"
@@ -56,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_timestamp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="10dp"
         android:layout_toLeftOf="@id/iv_menu"
         android:layout_toRightOf="@id/tv_extra"
         android:drawableLeft="@drawable/comment_edit"
@@ -82,7 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_desc"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="6dp"
         android:layout_toLeftOf="@id/iv_menu" />
 
 </RelativeLayout>

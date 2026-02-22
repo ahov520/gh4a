@@ -58,6 +58,7 @@ public class TimelineItemAdapter
         void onReplyCommentSelected(long replyToId);
         long getSelectedReplyCommentId();
         String getShareSubject(GitHubCommentBase comment);
+        void translateComment(GitHubCommentBase comment);
         Single<List<Reaction>> loadReactionDetails(GitHubCommentBase comment, boolean bypassCache);
         Single<Reaction> addReaction(GitHubCommentBase comment, String content);
         Single<Boolean> deleteReaction(GitHubCommentBase comment, long reactionId);
@@ -110,6 +111,10 @@ public class TimelineItemAdapter
                 case R.id.share:
                     IntentUtils.share(mContext, mActionCallback.getShareSubject(comment.comment()),
                             Uri.parse(comment.comment().htmlUrl()));
+                    return true;
+
+                case R.id.translate:
+                    mActionCallback.translateComment(comment.comment());
                     return true;
 
                 case R.id.view_in_file:

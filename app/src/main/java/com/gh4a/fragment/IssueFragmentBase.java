@@ -40,6 +40,7 @@ import com.gh4a.activities.UserActivity;
 import com.gh4a.adapter.RootAdapter;
 import com.gh4a.adapter.timeline.TimelineItemAdapter;
 import com.gh4a.model.TimelineItem;
+import com.gh4a.translation.TranslationClient;
 import com.gh4a.utils.ActivityResultHelpers;
 import com.gh4a.utils.ApiHelpers;
 import com.gh4a.utils.AvatarHandler;
@@ -600,6 +601,18 @@ public abstract class IssueFragmentBase extends ListDataBaseFragment<TimelineIte
     public String getShareSubject(GitHubCommentBase comment) {
         return getString(R.string.share_comment_subject, comment.id(), mIssue.number(),
                 mRepoOwner + "/" + mRepoName);
+    }
+
+    @Override
+    public void translateComment(GitHubCommentBase comment) {
+        TranslationClient translationClient = new TranslationClient(requireContext());
+        String sourceText = comment.body();
+        translationClient.translate(sourceText)
+                .compose(RxUtils.wrapForBackgroundTask(getBaseActivity(),
+                        R.string.translating_msg, R.string.error_translate_comment))
+                .subscribe(result -> TranslationResultBottomSheet.show(
+                        getChildFragmentManager(), sourceText, result),
+                        error -> handleActionFailure("Translating comment failed", error));
     }
 
     @Override

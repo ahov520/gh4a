@@ -8,10 +8,14 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.InputType;
+import android.text.TextUtils;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialog;
+import androidx.preference.EditTextPreference;
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.TwoStatePreference;
@@ -45,6 +49,12 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
     public static final String KEY_CUSTOM_TABS = "use_custom_tabs";
     public static final String KEY_NOTIFICATIONS = "notifications";
     public static final String KEY_NOTIFICATION_INTERVAL = "notification_interval";
+    public static final String KEY_TRANSLATION_ENABLED = "translation_enabled";
+    public static final String KEY_TRANSLATION_GATEWAY_BASE_URL = "translation_gateway_base_url";
+    public static final String KEY_TRANSLATION_GATEWAY_PATH = "translation_gateway_path";
+    public static final String KEY_TRANSLATION_API_KEY = "translation_api_key";
+    public static final String KEY_TRANSLATION_TARGET_LANG = "translation_target_lang";
+    public static final String KEY_TRANSLATION_TIMEOUT_SEC = "translation_timeout_sec";
     private static final String KEY_ABOUT = "about";
     private static final String KEY_OPEN_SOURCE_COMPONENTS = "open_source_components";
 
@@ -54,6 +64,11 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
     private Preference mOpenSourcePref;
     private TwoStatePreference mNotificationsPref;
     private IntegerListPreference mNotificationIntervalPref;
+    private EditTextPreference mTranslationBaseUrlPref;
+    private EditTextPreference mTranslationPathPref;
+    private EditTextPreference mTranslationApiKeyPref;
+    private ListPreference mTranslationTargetLangPref;
+    private IntegerListPreference mTranslationTimeoutPref;
 
     @Override
     public void onAttach(Context context) {
@@ -84,6 +99,35 @@ public class SettingsFragment extends PreferenceFragmentCompat implements
 
         mNotificationIntervalPref = findPreference(KEY_NOTIFICATION_INTERVAL);
         mNotificationIntervalPref.setOnPreferenceChangeListener(this);
+
+        mTranslationBaseUrlPref = findPreference(KEY_TRANSLATION_GATEWAY_BASE_URL);
+        mTranslationPathPref = findPreference(KEY_TRANSLATION_GATEWAY_PATH);
+        mTranslationApiKeyPref = findPreference(KEY_TRANSLATION_API_KEY);
+        mTranslationTargetLangPref = findPreference(KEY_TRANSLATION_TARGET_LANG);
+        mTranslationTimeoutPref = findPreference(KEY_TRANSLATION_TIMEOUT_SEC);
+
+        if (mTranslationApiKeyPref != null) {
+            mTranslationApiKeyPref.setOnBindEditTextListener(editText ->
+                    editText.setInputType(InputType.TYPE_CLASS_TEXT
+                            | InputType.TYPE_TEXT_VARIATION_PASSWORD));
+            mTranslationApiKeyPref.setSummaryProvider(preference -> {
+                String value = ((EditTextPreference) preference).getText();
+                return TextUtils.isEmpty(value) ? "" : "********";
+            });
+        }
+
+        if (mTranslationBaseUrlPref != null) {
+            mTranslationBaseUrlPref.setSummaryProvider(EditTextPreference.SimpleSummaryProvider.getInstance());
+        }
+        if (mTranslationPathPref != null) {
+            mTranslationPathPref.setSummaryProvider(EditTextPreference.SimpleSummaryProvider.getInstance());
+        }
+        if (mTranslationTargetLangPref != null) {
+            mTranslationTargetLangPref.setSummaryProvider(ListPreference.SimpleSummaryProvider.getInstance());
+        }
+        if (mTranslationTimeoutPref != null) {
+            mTranslationTimeoutPref.setSummaryProvider(ListPreference.SimpleSummaryProvider.getInstance());
+        }
     }
 
     @Override

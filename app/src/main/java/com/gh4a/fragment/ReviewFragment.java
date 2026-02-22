@@ -23,6 +23,7 @@ import com.gh4a.activities.EditPullRequestCommentActivity;
 import com.gh4a.adapter.RootAdapter;
 import com.gh4a.adapter.timeline.TimelineItemAdapter;
 import com.gh4a.model.TimelineItem;
+import com.gh4a.translation.TranslationClient;
 import com.gh4a.utils.ActivityResultHelpers;
 import com.gh4a.utils.ApiHelpers;
 import com.gh4a.utils.IntentUtils;
@@ -407,6 +408,18 @@ public class ReviewFragment extends ListDataBaseFragment<TimelineItem> implement
     @Override
     public String getShareSubject(GitHubCommentBase comment) {
         return null;
+    }
+
+    @Override
+    public void translateComment(GitHubCommentBase comment) {
+        TranslationClient translationClient = new TranslationClient(requireContext());
+        String sourceText = comment.body();
+        translationClient.translate(sourceText)
+                .compose(RxUtils.wrapForBackgroundTask(getBaseActivity(),
+                        R.string.translating_msg, R.string.error_translate_comment))
+                .subscribe(result -> TranslationResultBottomSheet.show(
+                                getChildFragmentManager(), sourceText, result),
+                        error -> handleActionFailure("Translating comment failed", error));
     }
 
     @Override

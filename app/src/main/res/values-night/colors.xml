@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#396426</color>
-    <color name="primary_dark">#2d501e</color>
-    <color name="accent">#559639</color>
+    <color name="primary">#10273e</color>
+    <color name="primary_dark">#0b1c2d</color>
+    <color name="accent">#58a6ff</color>
 
     <color name="link_text">@color/accent</color>
 
     <color name="label_fg">@color/label_fg_light</color>
 
-    <color name="issue_open">#396426</color>
-    <color name="issue_closed">#642626</color>
-    <color name="pr_merged">#3a2664</color>
-    <color name="pr_draft">#363940</color>
-    <color name="issue_open_dark">#2e501e</color>
-    <color name="issue_closed_dark">#501e1e</color>
-    <color name="pr_merged_dark">#2e1e50</color>
-    <color name="pr_draft_dark">#27292e</color>
-    <color name="issue_open_button">#569639</color>
-    <color name="issue_closed_button">#963939</color>
-    <color name="pr_merged_button">#563996</color>
-    <color name="pr_draft_button">#606673</color>
+    <color name="issue_open">#166f43</color>
+    <color name="issue_closed">#8f3142</color>
+    <color name="pr_merged">#1f6f5f</color>
+    <color name="pr_draft">#4b5563</color>
+    <color name="issue_open_dark">#115637</color>
+    <color name="issue_closed_dark">#742738</color>
+    <color name="pr_merged_dark">#1a5a4d</color>
+    <color name="pr_draft_dark">#3c4654</color>
+    <color name="issue_open_button">#1f8a53</color>
+    <color name="issue_closed_button">#ac4055</color>
+    <color name="pr_merged_button">#2c8f7b</color>
+    <color name="pr_draft_button">#707a89</color>
 
-    <color name="fab">#569639</color>
+    <color name="fab">#58a6ff</color>
 
     <color name="scrollbar_thumb">#5dffffff</color>
 
@@ -34,8 +34,8 @@
     <color name="commit_deletion">#d25151</color>
     <color name="code_background">#30ffffff</color>
 
-    <color name="drawer_background">@color/background_floating_material_dark</color>
-    <color name="list_background">@android:color/transparent</color>
-    <color name="icon_foreground">#ccffffff</color>
-    <color name="breadcrumb_background">#587849</color>
+    <color name="drawer_background">#121923</color>
+    <color name="list_background">#0f141c</color>
+    <color name="icon_foreground">#ccd7e2f2</color>
+    <color name="breadcrumb_background">#1f3d5e</color>
 </resources>
